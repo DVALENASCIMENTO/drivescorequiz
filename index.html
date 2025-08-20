@@ -9,10 +9,57 @@
 </head>
 <body>
     <header class="app-header">
-        <div>
-            
+        <div class="brand">
+            <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+                <rect width="64" height="64" rx="14"></rect>
+                <path d="M14 20h36v8H14zM14 36h20v8H14z"></path>
+            </svg>
+            <div class="titles">
+                <h1>Drive Score Quiz</h1>
+                <p class="subtitle">Treine o Olhar Rápido: Vale a Pena ou Não?</p>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="muteBtn" aria-label="Alternar som">🔊</button>
+            <button id="startBtn" class="primary">Iniciar</button>
         </div>
     </header>
-    
+
+    <main class="card" role="main">
+        <div class="hud">
+            <div class="progress-wrap">
+                <div id="progressText">Pergunta <span id="qIndex">0</span>/<span id="qTotal">0</span></div>
+                <div class="bar"><div id="barFill" class="fill"></div></div>
+            </div>
+            <div class="timer" aria-live="polite">
+                <div class="radial" id="radialTimer">
+                <span id="secs">5</span>
+                </div>
+            </div>
+        </div>
+        <section class="question" aria-live="polite">
+            <h2 id="prompt">Clique em “Iniciar”</h2>
+            <ul class="facts" id="facts">
+                <li>Valor: —</li>
+                <li>Distância: —</li>
+                <li>Tempo: —</li>
+            </ul>
+        </section>
+        <section class="actions">
+            <button id="acceptBtn" class="accept" disabled>ACEITAR</button>
+            <button id="rejectBtn" class="reject" disabled>RECUSAR</button>
+        </section>
+        <section id="feedback" class="feedback" aria-live="polite"></section>
+
+        <section id="finish" class="finish hidden">
+            <h3>Resultado</h3>
+            <p><strong id="scoreOk">0</strong> acertos de <span id="scoreTotal">0</span>.</p>
+            <button id="retryBtn">Tentar de novo</button>
+        </section>
+    </main>
+    <footer class="app-footer">
+        <small>Drive Score Quiz</small>
+    </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
